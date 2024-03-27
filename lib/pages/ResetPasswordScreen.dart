@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/navigationBar/BottomBar.dart';
-import 'package:music_player/pages/ForgetPasswordScreen.dart';
-import 'package:music_player/pages/HomeScreen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.only(top: 100),
                         width: MediaQuery.of(context).size.width - 60,
-                        height: MediaQuery.of(context).size.height - 350,
+                        height: MediaQuery.of(context).size.height - 500,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20)),
@@ -50,10 +48,10 @@ class LoginScreen extends StatelessWidget {
                           margin: EdgeInsets.only(top: 60),
                           padding: EdgeInsets.all(30),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                "Log In",
+                                "Reset Password",
                                 style: TextStyle(
                                     fontSize: 36, fontWeight: FontWeight.w900),
                               ),
@@ -85,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                                     ),
                                     prefixIcon: Icon(Icons.key_outlined)),
                               ),
-                              SizedBox(height: 40),
+                              SizedBox(height: 50),
                               SizedBox(
                                 width: double.infinity,
                                 height: 60,
@@ -104,52 +102,7 @@ class LoginScreen extends StatelessWidget {
                                     padding: EdgeInsets.symmetric(vertical: 15),
                                   ),
                                   child: Text(
-                                    "Log In",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 18),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return ForgetPasswordScreen();
-                                  }));
-                                },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Forget Password? ",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        decoration: TextDecoration.none,
-                                        fontWeight: FontWeight.w100,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 18),
-                              SizedBox(
-                                width: double.infinity,
-                                height: 60,
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFF68BFEA),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    padding: EdgeInsets.symmetric(vertical: 15),
-                                  ),
-                                  child: Text(
-                                    "Log In with google",
+                                    "Done",
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,

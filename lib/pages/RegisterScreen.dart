@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/navigationBar/BottomBar.dart';
-import 'package:music_player/pages/ForgetPasswordScreen.dart';
-import 'package:music_player/pages/HomeScreen.dart';
+import 'package:music_player/pages/LoginScreen.dart';
+import 'package:music_player/pages/VerificationScreen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class Register extends StatelessWidget {
+  const Register({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +39,9 @@ class LoginScreen extends StatelessWidget {
                   child: Stack(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 100),
+                        margin: EdgeInsets.only(top: 80),
                         width: MediaQuery.of(context).size.width - 60,
-                        height: MediaQuery.of(context).size.height - 350,
+                        height: MediaQuery.of(context).size.height - 180,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20)),
@@ -53,11 +52,30 @@ class LoginScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Log In",
+                                "Create",
+                                style: TextStyle(
+                                    fontSize: 36, fontWeight: FontWeight.w900),
+                              ),
+                              Text(
+                                "Your Account",
                                 style: TextStyle(
                                     fontSize: 36, fontWeight: FontWeight.w900),
                               ),
                               SizedBox(height: 20),
+                              TextFormField(
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(30),
+                                        borderSide:
+                                            BorderSide(color: Colors.grey)),
+                                    hintText: "Username",
+                                    hintStyle: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.grey.withOpacity(0.5),
+                                    ),
+                                    prefixIcon: Icon(Icons.person_2_outlined)),
+                              ),
+                              SizedBox(height: 10),
                               TextFormField(
                                 decoration: InputDecoration(
                                     border: OutlineInputBorder(
@@ -85,6 +103,20 @@ class LoginScreen extends StatelessWidget {
                                     ),
                                     prefixIcon: Icon(Icons.key_outlined)),
                               ),
+                              SizedBox(height: 10),
+                              TextFormField(
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(30),
+                                        borderSide:
+                                            BorderSide(color: Colors.grey)),
+                                    hintText: "Confirm Password",
+                                    hintStyle: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.grey.withOpacity(0.5),
+                                    ),
+                                    prefixIcon: Icon(Icons.key_outlined)),
+                              ),
                               SizedBox(height: 40),
                               SizedBox(
                                 width: double.infinity,
@@ -93,7 +125,7 @@ class LoginScreen extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                      return BottomBar();
+                                      return VerificationScreen();
                                     }));
                                   },
                                   style: ElevatedButton.styleFrom(
@@ -104,7 +136,7 @@ class LoginScreen extends StatelessWidget {
                                     padding: EdgeInsets.symmetric(vertical: 15),
                                   ),
                                   child: Text(
-                                    "Log In",
+                                    "Verification",
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,
@@ -117,20 +149,28 @@ class LoginScreen extends StatelessWidget {
                                 onTap: () {
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
-                                    return ForgetPasswordScreen();
+                                    return LoginScreen();
                                   }));
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "Forget Password? ",
+                                      "Already have an account? ",
                                       style: TextStyle(
                                         color: Colors.black,
                                         decoration: TextDecoration.none,
                                         fontWeight: FontWeight.w100,
-                                        fontSize: 13,
+                                        fontSize: 15,
                                       ),
+                                    ),
+                                    Text(
+                                      "Log in",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          decoration: TextDecoration.none,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ],
                                 ),
@@ -149,7 +189,7 @@ class LoginScreen extends StatelessWidget {
                                     padding: EdgeInsets.symmetric(vertical: 15),
                                   ),
                                   child: Text(
-                                    "Log In with google",
+                                    "Sign In with google",
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,

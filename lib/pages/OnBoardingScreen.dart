@@ -38,7 +38,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   //skip
                   GestureDetector(
                     onTap: () {
-                      _controller.jumpToPage(2);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Preview3();
+                      }));
                     },
                     child: Text(
                       "skip",

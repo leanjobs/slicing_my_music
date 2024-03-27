@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/navigationBar/BottomBar.dart';
-import 'package:music_player/pages/ForgetPasswordScreen.dart';
 import 'package:music_player/pages/HomeScreen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class VerificationScreen extends StatelessWidget {
+  const VerificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +41,7 @@ class LoginScreen extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.only(top: 100),
                         width: MediaQuery.of(context).size.width - 60,
-                        height: MediaQuery.of(context).size.height - 350,
+                        height: MediaQuery.of(context).size.height - 440,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20)),
@@ -53,39 +52,70 @@ class LoginScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Log In",
+                                "Verification \nCode",
                                 style: TextStyle(
                                     fontSize: 36, fontWeight: FontWeight.w900),
                               ),
-                              SizedBox(height: 20),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                        borderSide:
-                                            BorderSide(color: Colors.grey)),
-                                    hintText: "Email",
-                                    hintStyle: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey.withOpacity(0.5),
-                                    ),
-                                    prefixIcon: Icon(Icons.mail_lock_outlined)),
-                              ),
                               SizedBox(height: 10),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                        borderSide:
-                                            BorderSide(color: Colors.grey)),
-                                    hintText: "Password",
-                                    hintStyle: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey.withOpacity(0.5),
-                                    ),
-                                    prefixIcon: Icon(Icons.key_outlined)),
+                              Text(
+                                "Verify your account by entering the 4 digits code we send to: a*****@gmail.com",
+                                style: TextStyle(fontSize: 15),
                               ),
-                              SizedBox(height: 40),
+                              SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Expanded(
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            borderSide:
+                                                BorderSide(color: Colors.grey)),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                  Expanded(
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            borderSide:
+                                                BorderSide(color: Colors.grey)),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                  Expanded(
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            borderSide:
+                                                BorderSide(color: Colors.grey)),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                  Expanded(
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            borderSide:
+                                                BorderSide(color: Colors.grey)),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 20),
                               SizedBox(
                                 width: double.infinity,
                                 height: 60,
@@ -104,7 +134,7 @@ class LoginScreen extends StatelessWidget {
                                     padding: EdgeInsets.symmetric(vertical: 15),
                                   ),
                                   child: Text(
-                                    "Log In",
+                                    "Send",
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,
@@ -113,50 +143,21 @@ class LoginScreen extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 18),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return ForgetPasswordScreen();
-                                  }));
-                                },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Forget Password? ",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        decoration: TextDecoration.none,
-                                        fontWeight: FontWeight.w100,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 18),
-                              SizedBox(
-                                width: double.infinity,
-                                height: 60,
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFF68BFEA),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    padding: EdgeInsets.symmetric(vertical: 15),
-                                  ),
-                                  child: Text(
-                                    "Log In with google",
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Resend code in 03:00",
                                     style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 18,
+                                      decoration: TextDecoration.none,
+                                      fontWeight: FontWeight.w100,
+                                      fontSize: 13,
                                     ),
                                   ),
-                                ),
+                                ],
                               ),
+                              SizedBox(height: 18),
                             ],
                           ),
                         ),

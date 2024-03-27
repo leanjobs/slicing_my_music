@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/pages/LoginScreen.dart';
+import 'package:music_player/pages/RegisterScreen.dart';
 
 class Preview3 extends StatelessWidget {
   const Preview3({super.key});
@@ -49,7 +50,12 @@ class Preview3 extends StatelessWidget {
                   children: [
                     Expanded(
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return Register();
+                          }));
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFFD9D9D9),
                           fixedSize: Size.fromHeight(55),
