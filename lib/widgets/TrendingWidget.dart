@@ -29,12 +29,11 @@ class TrendingWidget extends StatelessWidget {
                           children: [
                             Image.asset(
                               "images/posterAlbum.jpeg",
-                              height: 70,
-                              width: 70,
+                              width: MediaQuery.of(context).size.width * 0.15,
                             ),
                             Icon(
                               Icons.play_arrow,
-                              size: 68,
+                              size: 60,
                               color: Colors.white.withOpacity(0.5),
                             ),
                           ],

@@ -26,8 +26,7 @@ class TopArtistWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                       child: Image.asset(
                         "images/profile.jpeg",
-                        height: 80,
-                        width: 80,
+                        width: MediaQuery.of(context).size.width * 0.2,
                       ),
                     ),
                     Text(

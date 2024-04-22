@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/pages/MoreArtistScreen.dart';
+import 'package:music_player/pages/ProfileScreen.dart';
 import 'package:music_player/widgets/ForYouWidget.dart';
 import 'package:music_player/widgets/TopArtistWidget.dart';
 import 'package:music_player/widgets/TrendingWidget.dart';
@@ -15,7 +16,10 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 40, horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                  horizontal: MediaQuery.of(context).size.width * 0.03,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -46,12 +50,20 @@ class HomeScreen extends StatelessWidget {
                           width: 4,
                         ),
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
-                        child: Image.asset(
-                          "images/profile.jpeg",
-                          height: 50,
-                          width: 50,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return ProfileScreen();
+                          }));
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            "images/profile.jpeg",
+                            height: 50,
+                            width: 50,
+                          ),
                         ),
                       ),
                     ),
@@ -60,7 +72,10 @@ class HomeScreen extends StatelessWidget {
               ),
               ForYouWidget(),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 28, horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                  horizontal: MediaQuery.of(context).size.width * 0.03,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -73,8 +88,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context, rootNavigator: true)
-                            .push(MaterialPageRoute(builder: (context) {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
                           return MoreArtistScreen();
                         }));
                       },
@@ -100,7 +115,10 @@ class HomeScreen extends StatelessWidget {
               ),
               TopArtistWidget(),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 28, horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                  horizontal: MediaQuery.of(context).size.width * 0.03,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [

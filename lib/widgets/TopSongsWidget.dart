@@ -19,6 +19,8 @@ class TopSongsWidget extends StatelessWidget {
                     Text(
                       "${i}.",
                       style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontFamily: 'Metropolis',
                         fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -56,6 +58,8 @@ class TopSongsWidget extends StatelessWidget {
                         Text(
                           "Super",
                           style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontFamily: 'Metropolis',
                             fontSize: 20,
                             color: Colors.white,
                           ),
@@ -63,6 +67,8 @@ class TopSongsWidget extends StatelessWidget {
                         Text(
                           "Seventeen",
                           style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontFamily: 'Metropolis',
                             fontSize: 15,
                             color: Colors.white,
                           ),

@@ -32,11 +32,16 @@ class ArtistScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 40, horizontal: 25),
+                  padding: EdgeInsets.symmetric(
+                    vertical: MediaQuery.of(context).size.height * 0.03,
+                    horizontal: MediaQuery.of(context).size.width * 0.03,
+                  ),
                   child: AppBar(
                       title: Text(
                         'Artist Page',
                         style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontFamily: 'Metropolis',
                           color: Colors.white,
                         ),
                       ),
@@ -64,6 +69,8 @@ class ArtistScreen extends StatelessWidget {
                 Text(
                   "Seventeen",
                   style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontFamily: 'Metropolis',
                     fontSize: 40,
                     color: Colors.white,
                     fontWeight: FontWeight.w900,
@@ -72,6 +79,8 @@ class ArtistScreen extends StatelessWidget {
                 Text(
                   "Top Songs",
                   style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontFamily: 'Metropolis',
                     fontSize: 20,
                     color: Colors.white,
                     fontWeight: FontWeight.w200,
@@ -83,6 +92,8 @@ class ArtistScreen extends StatelessWidget {
                 Text(
                   "Top Songs",
                   style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontFamily: 'Metropolis',
                     fontSize: 20,
                     color: Colors.white,
                     fontWeight: FontWeight.w200,

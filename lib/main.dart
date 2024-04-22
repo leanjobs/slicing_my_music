@@ -7,6 +7,7 @@ import 'package:music_player/pages/HomeScreen.dart';
 import 'package:music_player/pages/LikedScreen.dart';
 import 'package:music_player/pages/MoreArtistScreen.dart';
 import 'package:music_player/pages/MusicScreen.dart';
+import 'package:music_player/pages/ProfileScreen.dart';
 import 'package:music_player/pages/SearchScreen.dart';
 import 'package:music_player/pages/SplashScreen.dart';
 import 'package:music_player/previews/Preview.dart';

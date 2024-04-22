@@ -7,7 +7,9 @@ class AllArtistWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25),
+      padding: EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width * 0.03,
+      ),
       child: Column(
         children: [
           for (int i = 0; i < 10; i++)

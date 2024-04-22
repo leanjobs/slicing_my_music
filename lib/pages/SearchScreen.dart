@@ -11,9 +11,11 @@ class SearchScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              SizedBox(height: 50),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                  horizontal: MediaQuery.of(context).size.width * 0.03,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -27,9 +29,10 @@ class SearchScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 25),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.03,
+                ),
                 child: TextFormField(
                   style: TextStyle(color: Colors.black),
                   decoration: InputDecoration(
@@ -55,7 +58,9 @@ class SearchScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.03,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [

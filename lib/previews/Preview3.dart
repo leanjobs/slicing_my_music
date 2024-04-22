@@ -35,11 +35,12 @@ class Preview3 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "Listen to the best audio and music with My Music now!",
+                  "User Friendly mp3 music player for your device",
                   style: TextStyle(
-                      decoration: TextDecoration.none,
                       color: Colors.white,
                       fontSize: 36,
+                      fontFamily: 'Metropolis',
+                      decoration: TextDecoration.none,
                       fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
@@ -62,7 +63,11 @@ class Preview3 extends StatelessWidget {
                         ),
                         child: Text(
                           "Let's Get Started",
-                          style: TextStyle(color: Colors.black, fontSize: 20),
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontFamily: 'Metropolis',
+                          ),
                         ),
                       ),
                     ),
@@ -86,6 +91,7 @@ class Preview3 extends StatelessWidget {
                           decoration: TextDecoration.none,
                           fontWeight: FontWeight.w100,
                           fontSize: 18,
+                          fontFamily: 'Metropolis',
                         ),
                       ),
                       Text(
@@ -94,6 +100,7 @@ class Preview3 extends StatelessWidget {
                             color: Colors.white,
                             decoration: TextDecoration.none,
                             fontSize: 18,
+                            fontFamily: 'Metropolis',
                             fontWeight: FontWeight.bold),
                       ),
                     ],

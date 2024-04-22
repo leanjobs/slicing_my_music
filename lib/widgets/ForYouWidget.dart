@@ -20,15 +20,16 @@ class ForYouWidget extends StatelessWidget {
                   }));
                 },
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.03,
+                  ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset(
                         "images/posterAlbum.jpeg",
-                        width: 147,
-                        height: 152,
+                        width: MediaQuery.of(context).size.width * 0.35,
                         fit: BoxFit.cover,
                       ),
                       Text(

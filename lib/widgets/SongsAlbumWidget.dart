@@ -48,6 +48,8 @@ class SongsAlbumWidget extends StatelessWidget {
                         Text(
                           "Super",
                           style: TextStyle(
+                            fontFamily: 'Metropolis',
+                            decoration: TextDecoration.none,
                             fontSize: 20,
                             color: Colors.white,
                           ),
@@ -55,6 +57,8 @@ class SongsAlbumWidget extends StatelessWidget {
                         Text(
                           "Seventeen",
                           style: TextStyle(
+                            fontFamily: 'Metropolis',
+                            decoration: TextDecoration.none,
                             fontSize: 15,
                             color: Colors.white,
                           ),

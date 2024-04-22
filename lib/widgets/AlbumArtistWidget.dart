@@ -18,20 +18,23 @@ class AlbumArtistWidget extends StatelessWidget {
                   }));
                 },
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.03,
+                  ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Image.asset(
                         "images/posterAlbum.jpeg",
-                        width: 147,
-                        height: 152,
+                        width: MediaQuery.of(context).size.width * 0.35,
                         fit: BoxFit.cover,
                       ),
                       Text(
                         "Super",
                         style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontFamily: 'Metropolis',
                             fontSize: 18,
                             fontWeight: FontWeight.w900,
                             color: Colors.white),
@@ -39,6 +42,8 @@ class AlbumArtistWidget extends StatelessWidget {
                       Text(
                         "2023.Album",
                         style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontFamily: 'Metropolis',
                           fontSize: 14,
                           color: Colors.white,
                         ),

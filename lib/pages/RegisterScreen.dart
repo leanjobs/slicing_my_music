@@ -29,190 +29,316 @@ class Register extends StatelessWidget {
                 ),
               ),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding:
-                      EdgeInsets.only(right: 30, left: 30, bottom: 70, top: 20),
-                  child: Stack(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 80),
-                        width: MediaQuery.of(context).size.width - 60,
-                        height: MediaQuery.of(context).size.height - 180,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Container(
-                          margin: EdgeInsets.only(top: 60),
-                          padding: EdgeInsets.all(30),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Create",
-                                style: TextStyle(
-                                    fontSize: 36, fontWeight: FontWeight.w900),
-                              ),
-                              Text(
-                                "Your Account",
-                                style: TextStyle(
-                                    fontSize: 36, fontWeight: FontWeight.w900),
-                              ),
-                              SizedBox(height: 20),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                        borderSide:
-                                            BorderSide(color: Colors.grey)),
-                                    hintText: "Username",
-                                    hintStyle: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey.withOpacity(0.5),
-                                    ),
-                                    prefixIcon: Icon(Icons.person_2_outlined)),
-                              ),
-                              SizedBox(height: 10),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                        borderSide:
-                                            BorderSide(color: Colors.grey)),
-                                    hintText: "Email",
-                                    hintStyle: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey.withOpacity(0.5),
-                                    ),
-                                    prefixIcon: Icon(Icons.mail_lock_outlined)),
-                              ),
-                              SizedBox(height: 10),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                        borderSide:
-                                            BorderSide(color: Colors.grey)),
-                                    hintText: "Password",
-                                    hintStyle: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey.withOpacity(0.5),
-                                    ),
-                                    prefixIcon: Icon(Icons.key_outlined)),
-                              ),
-                              SizedBox(height: 10),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                        borderSide:
-                                            BorderSide(color: Colors.grey)),
-                                    hintText: "Confirm Password",
-                                    hintStyle: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey.withOpacity(0.5),
-                                    ),
-                                    prefixIcon: Icon(Icons.key_outlined)),
-                              ),
-                              SizedBox(height: 40),
-                              SizedBox(
-                                width: double.infinity,
-                                height: 60,
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return VerificationScreen();
-                                    }));
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFFD9D9D9),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    padding: EdgeInsets.symmetric(vertical: 15),
-                                  ),
-                                  child: Text(
-                                    "Verification",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 18),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return LoginScreen();
-                                  }));
-                                },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Already have an account? ",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        decoration: TextDecoration.none,
-                                        fontWeight: FontWeight.w100,
-                                        fontSize: 15,
+            Center(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(
+                          MediaQuery.of(context).size.width * 0.08),
+                      child: SingleChildScrollView(
+                        child: Stack(
+                          children: [
+                            Center(
+                              child: Container(
+                                margin: EdgeInsets.only(top: 80),
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                // height: MediaQuery.of(context).size.height * 0.8,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Container(
+                                  margin: EdgeInsets.only(top: 60),
+                                  padding: EdgeInsets.all(30),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Create \nYour Account",
+                                        style: TextStyle(
+                                            fontSize: 36,
+                                            fontWeight: FontWeight.w900),
                                       ),
-                                    ),
-                                    Text(
-                                      "Log in",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          decoration: TextDecoration.none,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
+                                      SizedBox(height: 3),
+                                      Container(
+                                        // decoration:
+                                        //     BoxDecoration(color: Colors.amber),
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.5,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              // height: MediaQuery.of(context)
+                                              //         .size
+                                              //         .height *
+                                              //     0.05,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  TextFormField(
+                                                    decoration: InputDecoration(
+                                                        contentPadding: EdgeInsets
+                                                            .all(MediaQuery.of(
+                                                                        context)
+                                                                    .size
+                                                                    .height *
+                                                                0.01),
+                                                        border: OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        30),
+                                                            borderSide:
+                                                                BorderSide(
+                                                                    color: Colors
+                                                                        .grey)),
+                                                        hintText: "Username",
+                                                        hintStyle: TextStyle(
+                                                          fontSize: 15,
+                                                          color: Colors.grey
+                                                              .withOpacity(0.5),
+                                                        ),
+                                                        prefixIcon: Icon(Icons
+                                                            .person_2_outlined)),
+                                                  ),
+                                                  SizedBox(height: 10),
+                                                  TextFormField(
+                                                    decoration: InputDecoration(
+                                                        contentPadding: EdgeInsets
+                                                            .all(MediaQuery.of(
+                                                                        context)
+                                                                    .size
+                                                                    .height *
+                                                                0.01),
+                                                        border: OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        30),
+                                                            borderSide:
+                                                                BorderSide(
+                                                                    color: Colors
+                                                                        .grey)),
+                                                        hintText: "Email",
+                                                        hintStyle: TextStyle(
+                                                          fontSize: 15,
+                                                          color: Colors.grey
+                                                              .withOpacity(0.5),
+                                                        ),
+                                                        prefixIcon: Icon(Icons
+                                                            .mail_lock_outlined)),
+                                                  ),
+                                                  SizedBox(height: 10),
+                                                  TextFormField(
+                                                    decoration: InputDecoration(
+                                                        contentPadding: EdgeInsets
+                                                            .all(MediaQuery.of(
+                                                                        context)
+                                                                    .size
+                                                                    .height *
+                                                                0.01),
+                                                        border: OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        30),
+                                                            borderSide:
+                                                                BorderSide(
+                                                                    color: Colors
+                                                                        .grey)),
+                                                        hintText: "Password",
+                                                        hintStyle: TextStyle(
+                                                          fontSize: 15,
+                                                          color: Colors.grey
+                                                              .withOpacity(0.5),
+                                                        ),
+                                                        prefixIcon: Icon(Icons
+                                                            .key_outlined)),
+                                                  ),
+                                                  SizedBox(height: 10),
+                                                  TextFormField(
+                                                    decoration: InputDecoration(
+                                                        contentPadding: EdgeInsets
+                                                            .all(MediaQuery.of(
+                                                                        context)
+                                                                    .size
+                                                                    .height *
+                                                                0.01),
+                                                        border: OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        30),
+                                                            borderSide:
+                                                                BorderSide(
+                                                                    color: Colors
+                                                                        .grey)),
+                                                        hintText:
+                                                            "Confirm Password",
+                                                        hintStyle: TextStyle(
+                                                          fontSize: 15,
+                                                          color: Colors.grey
+                                                              .withOpacity(0.5),
+                                                        ),
+                                                        prefixIcon: Icon(Icons
+                                                            .key_outlined)),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              child: Column(
+                                                children: [
+                                                  SizedBox(
+                                                    width: double.infinity,
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height *
+                                                            0.07,
+                                                    child: ElevatedButton(
+                                                      onPressed: () {
+                                                        Navigator.push(context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) {
+                                                          return VerificationScreen();
+                                                        }));
+                                                      },
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                        backgroundColor:
+                                                            Color(0xFFD9D9D9),
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(30),
+                                                        ),
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                                vertical: 15),
+                                                      ),
+                                                      child: Text(
+                                                        "Verification",
+                                                        style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontSize: 15,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: 10),
+                                                  GestureDetector(
+                                                    onTap: () {
+                                                      Navigator.push(context,
+                                                          MaterialPageRoute(
+                                                              builder:
+                                                                  (context) {
+                                                        return LoginScreen();
+                                                      }));
+                                                    },
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Text(
+                                                          "Already have an account? ",
+                                                          style: TextStyle(
+                                                            color: Colors.black,
+                                                            decoration:
+                                                                TextDecoration
+                                                                    .none,
+                                                            fontWeight:
+                                                                FontWeight.w100,
+                                                            fontSize: 13,
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          "Log in",
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.black,
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .none,
+                                                              fontSize: 13,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: 10),
+                                                  SizedBox(
+                                                    width: double.infinity,
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height *
+                                                            0.07,
+                                                    child: ElevatedButton(
+                                                      onPressed: () {},
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                        backgroundColor:
+                                                            Color(0xFF68BFEA),
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(30),
+                                                        ),
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                                vertical: 15),
+                                                      ),
+                                                      child: Text(
+                                                        "Sign In with google",
+                                                        style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontSize: 15,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+
+                                      // SizedBox(height: 40),
+                                    ],
+                                  ),
                                 ),
                               ),
-                              SizedBox(height: 18),
-                              SizedBox(
-                                width: double.infinity,
-                                height: 60,
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFF68BFEA),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    padding: EdgeInsets.symmetric(vertical: 15),
-                                  ),
-                                  child: Text(
-                                    "Sign In with google",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                    ),
-                                  ),
-                                ),
+                            ),
+                            Center(
+                              child: Container(
+                                // height: 200,
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                child: Image.asset("images/onlyLogo.png"),
                               ),
-                            ],
-                          ),
+                            )
+                          ],
                         ),
                       ),
-                      Positioned(
-                          left: (MediaQuery.of(context).size.width - 260) / 2,
-                          top: -20,
-                          child: Container(
-                            height: 200,
-                            width: 200,
-                            child: Image.asset("images/onlyLogo.png"),
-                          ))
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             )
           ],
         ),

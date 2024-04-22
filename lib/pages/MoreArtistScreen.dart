@@ -13,32 +13,35 @@ class MoreArtistScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              SizedBox(height: 50),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
-                child: AppBar(
-                  title: Text(
-                    'Artist',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  centerTitle: true,
-                  backgroundColor: Colors.transparent,
-                 leading: IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.white,
-                    ),
-                  )
+                padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                  horizontal: MediaQuery.of(context).size.width * 0.03,
                 ),
+                child: AppBar(
+                    title: Text(
+                      'Artist',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    centerTitle: true,
+                    backgroundColor: Colors.transparent,
+                    leading: IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                      ),
+                    )),
               ),
-              SizedBox(height: 25),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                  horizontal: MediaQuery.of(context).size.width * 0.03,
+                ),
                 child: TextFormField(
                   style: TextStyle(color: Colors.black),
                   decoration: InputDecoration(
@@ -62,9 +65,10 @@ class MoreArtistScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.03,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -78,11 +82,12 @@ class MoreArtistScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 15),
               TopArtistWidget(),
-              SizedBox(height: 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                  horizontal: MediaQuery.of(context).size.width * 0.03,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -96,7 +101,6 @@ class MoreArtistScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 15),
               AllArtistWidget()
             ],
           ),
