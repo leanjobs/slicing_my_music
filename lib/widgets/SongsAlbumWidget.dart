@@ -18,10 +18,10 @@ class SongsAlbumWidget extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context, rootNavigator: true)
-                            .push(MaterialPageRoute(builder: (context) {
-                          return MusicScreen();
-                        }));
+                        // Navigator.of(context, rootNavigator: true)
+                        //     .push(MaterialPageRoute(builder: (context) {
+                        //   return MusicScreen();
+                        // }));
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(right: 10),

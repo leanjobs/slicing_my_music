@@ -8,7 +8,7 @@ class TrendingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 11; i++)
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20, bottom: 15),
             child: Row(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/pages/DetailAlbumScreen.dart';
+import 'package:music_player/pages/DetailPlaylistScreen.dart';
 
 class AlbumArtistWidget extends StatelessWidget {
   const AlbumArtistWidget({super.key});
@@ -13,9 +13,9 @@ class AlbumArtistWidget extends StatelessWidget {
             for (int i = 1; i < 6; i++)
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return DetailAlbumScreen();
-                  }));
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  //   return DetailAlbumScreen();
+                  // }));
                 },
                 child: Padding(
                   padding: EdgeInsets.symmetric(

@@ -40,6 +40,9 @@ dependencies:
   persistent_bottom_nav_bar: ^5.0.2
   simple_waveform_progressbar: ^0.0.3
   audio_video_progress_bar: ^2.0.2
+  spotify: ^0.13.6+1
+  audioplayers: ^5.2.1
+  youtube_explode_dart: ^2.2.0
 
 dev_dependencies:
   flutter_test:

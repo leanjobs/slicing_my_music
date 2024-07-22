@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/constants/string.dart';
+import 'package:music_player/models/playlist.dart';
 import 'package:music_player/widgets/SongsAlbumWidget.dart';
+import 'package:spotify/spotify.dart' as spotify;
+import 'package:youtube_explode_dart/youtube_explode_dart.dart';
+import 'package:music_player/models/playlist.dart';
 
-class DetailAlbumScreen extends StatelessWidget {
-  const DetailAlbumScreen({super.key});
+class DetailPlaylistScreen extends StatefulWidget {
+  @override
+  State<DetailPlaylistScreen> createState() => _DetailPlaylistScreenState();
+}
 
+class _DetailPlaylistScreenState extends State<DetailPlaylistScreen> {
+  @override
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,10 +73,10 @@ class DetailAlbumScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(5),
                         child: Image.asset(
                           "images/posterAlbum.jpeg",
-                          width: MediaQuery.of(context).size.width * 0.4,
+                          width: MediaQuery.of(context).size.width * 0.35,
                         ),
                       ),
                       Flexible(
@@ -79,58 +88,32 @@ class DetailAlbumScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Seventeen 10th Mini Album ‘FML’",
+                                "helllow",
                                 style: TextStyle(
                                   fontFamily: 'Metropolis',
                                   decoration: TextDecoration.none,
                                   color: Colors.white,
-                                  fontSize: 22,
+                                  fontSize: 25,
                                   fontWeight: FontWeight.w900,
                                 ),
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 2,
                               ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Flexible(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Seventeen",
-                                          style: TextStyle(
-                                              fontFamily: 'Metropolis',
-                                              decoration: TextDecoration.none,
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w200),
-                                          overflow: TextOverflow.ellipsis,
-                                          maxLines: 1,
-                                        ),
-                                        Text(
-                                          "2023",
-                                          style: TextStyle(
-                                              fontFamily: 'Metropolis',
-                                              decoration: TextDecoration.none,
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w200),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(50),
-                                      color: Color(0xFF1E9FE0),
-                                    ),
-                                    child: Icon(Icons.play_arrow,
-                                        color: Colors.white, size: 50),
-                                  ),
-                                ],
+                              // Container(
+                              //   decoration: BoxDecoration(color: Colors.amber),
+                              //   child: Text("lorem ipsum iohchbhbiasbias"),
+                              // ),
+                              Text(
+                                "lorem ipsum",
+                                style: TextStyle(
+                                  fontFamily: 'Metropolis',
+                                  decoration: TextDecoration.none,
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
                               ),
                             ],
                           ),

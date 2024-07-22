@@ -15,6 +15,7 @@ class BottomBar extends StatelessWidget {
       return [
         HomeScreen(),
         SearchScreen(),
+        GenreScreen(),
         LikedScreen(),
       ];
     }
@@ -32,6 +33,14 @@ class BottomBar extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: Icon(
             CupertinoIcons.search,
+            size: 30,
+          ),
+          activeColorPrimary: Color(0xFF1E9FE0),
+          inactiveColorPrimary: CupertinoColors.systemGrey,
+        ),
+        PersistentBottomNavBarItem(
+          icon: Icon(
+            Icons.dashboard_outlined,
             size: 30,
           ),
           activeColorPrimary: Color(0xFF1E9FE0),

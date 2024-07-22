@@ -1,142 +1,104 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/pages/MoreArtistScreen.dart';
+import 'package:music_player/constants/string.dart';
+import 'package:music_player/models/music.dart';
+import 'package:music_player/models/playlist.dart';
+import 'package:music_player/pages/DetailPlaylistScreen.dart';
+import 'package:music_player/pages/MusicScreen.dart';
 import 'package:music_player/pages/ProfileScreen.dart';
 import 'package:music_player/widgets/ForYouWidget.dart';
-import 'package:music_player/widgets/TopArtistWidget.dart';
 import 'package:music_player/widgets/TrendingWidget.dart';
+import 'package:spotify/spotify.dart' as spotify;
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: MediaQuery.of(context).size.height * 0.03,
-                  horizontal: MediaQuery.of(context).size.width * 0.03,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Discover",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 36,
-                              fontWeight: FontWeight.w900),
-                        ),
-                        Text(
-                          "For you",
-                          style: TextStyle(
-                            color: Colors.white54,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(
-                          color: Color(0xFF1E9FE0),
-                          width: 4,
-                        ),
-                      ),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return ProfileScreen();
-                          }));
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(30),
-                          child: Image.asset(
-                            "images/profile.jpeg",
-                            height: 50,
-                            width: 50,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              ForYouWidget(),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: MediaQuery.of(context).size.height * 0.03,
-                  horizontal: MediaQuery.of(context).size.width * 0.03,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: MediaQuery.of(context).size.height * 0.03,
+              horizontal: MediaQuery.of(context).size.width * 0.03,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Top Artist",
+                      "Discover",
                       style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white),
+                        color: Colors.white,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return MoreArtistScreen();
-                        }));
-                      },
-                      child: Row(
-                        children: [
-                          Text(
-                            "View All",
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Color(0xFF1E9FE0),
-                            ),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF1E9FE0),
-                            size: 15,
-                          )
-                        ],
+                    Text(
+                      "For you",
+                      style: TextStyle(
+                        color: Colors.white54,
+                        fontSize: 18,
                       ),
                     ),
                   ],
                 ),
-              ),
-              TopArtistWidget(),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: MediaQuery.of(context).size.height * 0.03,
-                  horizontal: MediaQuery.of(context).size.width * 0.03,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Trending",
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context, rootNavigator: true)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return ProfileScreen();
+                    }));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        color: Color(0xFF1E9FE0),
+                        borderRadius: BorderRadius.circular(50)),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Image.asset(
+                        "images/profile.jpeg",
+                        width: 50,
+                      ),
                     ),
-                  ],
-                ),
-              ),
-              TrendingWidget()
-            ],
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
+          ForYouWidget(),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: MediaQuery.of(context).size.height * 0.03,
+              horizontal: MediaQuery.of(context).size.width * 0.03,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Trending",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          TrendingWidget()
+        ],
       ),
-    );
+    ));
   }
 }

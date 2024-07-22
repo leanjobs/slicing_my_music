@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:music_player/pages/DetailAlbumScreen.dart';
+import 'package:music_player/pages/DetailPlaylistScreen.dart';
 
 class ForYouWidget extends StatelessWidget {
   const ForYouWidget({super.key});
@@ -16,7 +16,7 @@ class ForYouWidget extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return DetailAlbumScreen();
+                    return DetailPlaylistScreen();
                   }));
                 },
                 child: Padding(

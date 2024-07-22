@@ -97,9 +97,9 @@ class ProfileScreen extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Metropolis',
                               decoration: TextDecoration.none,
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
+                              color: Colors.white.withOpacity(0.5),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w300,
                             ),
                             overflow: TextOverflow.ellipsis,
                             maxLines: 2,
@@ -137,7 +137,8 @@ class ProfileScreen extends StatelessWidget {
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                         hintStyle: TextStyle(
                           fontSize: 18,
-                          color: Colors.grey.withOpacity(0.5),
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
@@ -161,7 +162,8 @@ class ProfileScreen extends StatelessWidget {
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                         hintStyle: TextStyle(
                           fontSize: 18,
-                          color: Colors.grey.withOpacity(0.5),
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
@@ -185,7 +187,8 @@ class ProfileScreen extends StatelessWidget {
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                         hintStyle: TextStyle(
                           fontSize: 18,
-                          color: Colors.grey.withOpacity(0.5),
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),

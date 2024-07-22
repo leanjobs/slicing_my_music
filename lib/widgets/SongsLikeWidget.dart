@@ -17,12 +17,12 @@ class SongsLikeWidget extends StatelessWidget {
                 Row(
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        Navigator.of(context, rootNavigator: true)
-                            .push(MaterialPageRoute(builder: (context) {
-                          return MusicScreen();
-                        }));
-                      },
+                      // onTap: () {
+                      //   Navigator.of(context, rootNavigator: true)
+                      //       .push(MaterialPageRoute(builder: (context) {
+                      //     return MusicScreen();
+                      //   }));
+                      // },
                       child: Padding(
                         padding: const EdgeInsets.only(right: 10),
                         child: Stack(
